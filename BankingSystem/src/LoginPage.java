@@ -72,6 +72,7 @@ public class LoginPage extends BankMain implements ActionListener {
 		LoginBtn.setBackground(Color.BLUE);
 		LoginBtn.setForeground(Color.WHITE);
 		LoginBtn.setFocusable(false);
+		LoginBtn.addActionListener(this);
 		
 		
 		SignUpBtn = new JButton("Sign Up");
@@ -133,6 +134,10 @@ public class LoginPage extends BankMain implements ActionListener {
 		if(e.getSource()==SignUpBtn) {
 			SignUpPage signuppage = new SignUpPage();
 			frame.dispose();
+		}
+		
+		if(e.getSource()== LoginBtn) {
+			HomePage homepage = new HomePage();
 		}
 		
 	}

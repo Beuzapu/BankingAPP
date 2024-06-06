@@ -7,7 +7,7 @@ public class BankMain {
 	}
 
 	public static void main(String[] args) {
-		LoginPage signup = new LoginPage();
+		LoginPage login = new LoginPage();
 
 	}
 
