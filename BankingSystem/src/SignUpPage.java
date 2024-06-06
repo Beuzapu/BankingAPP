@@ -10,7 +10,7 @@ public class SignUpPage extends BankMain implements ActionListener {
 	JFrame frame;
 	JPanel panel;
 	JTextField  FirstnameTextfield, LastnameTextfield,PhonenumberTextfield, PinTextfield;
-	JLabel FirstnameLabel, LastnameLabel, PhonenumberLabel, PinLabel, SignUpLabel, BanknameLabel, TextLabel, SignUpLabel_Pic;
+	JLabel FirstnameLabel, LastnameLabel, PhonenumberLabel, PasswordLabel, SignUpLabel, BanknameLabel, TextLabel, SignUpLabel_Pic;
 	JButton LoginBtn, SignUpBtn;
 	
 	Font font = new Font("Ink Free", Font.BOLD,25);
@@ -59,9 +59,9 @@ public class SignUpPage extends BankMain implements ActionListener {
 		PhonenumberLabel.setBounds(50,270,200,35);
 		PhonenumberLabel.setFont(font);
 		
-		PinLabel = new JLabel("Enter Pin: ");
-		PinLabel.setBounds(50,370,150,35);
-		PinLabel.setFont(font);
+		PasswordLabel = new JLabel("Enter Password: ");
+		PasswordLabel.setBounds(50,370,200,35);
+		PasswordLabel.setFont(font);
 		
 		
 		
@@ -85,6 +85,7 @@ public class SignUpPage extends BankMain implements ActionListener {
 		LoginBtn.setBackground(Color.BLUE);
 		LoginBtn.setForeground(Color.WHITE);
 		LoginBtn.setFocusable(false);
+		LoginBtn.addActionListener(this);
 		
 		
 		SignUpBtn = new JButton("Sign Up");
@@ -92,7 +93,7 @@ public class SignUpPage extends BankMain implements ActionListener {
 		SignUpBtn.setBackground(Color.BLUE);
 		SignUpBtn.setForeground(Color.WHITE);
 		SignUpBtn.setFocusable(false);
-		
+		SignUpBtn.addActionListener(this);
 		
 		
 		// Panel for Textfields and Labels
@@ -105,7 +106,7 @@ public class SignUpPage extends BankMain implements ActionListener {
 		panel.add(FirstnameLabel);
 		panel.add(LastnameLabel);
 		panel.add(PhonenumberLabel);
-		panel.add(PinLabel);
+		panel.add(PasswordLabel);
 		panel.add(FirstnameTextfield);
 		panel.add(LastnameTextfield);
 		panel.add(PhonenumberTextfield);
@@ -122,6 +123,7 @@ public class SignUpPage extends BankMain implements ActionListener {
 		frame.getContentPane().setBackground(Color.BLACK);;
 		frame.setLayout(null);
 		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
 		
 		
 		
@@ -145,7 +147,10 @@ public class SignUpPage extends BankMain implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		if(e.getSource()== LoginBtn) {
+			LoginPage loginpage = new LoginPage();
+			frame.dispose();
+		}
 		
 	}
 
