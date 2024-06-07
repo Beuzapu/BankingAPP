@@ -1,9 +1,11 @@
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class HomePage {
+public class HomePage implements ActionListener {
 
 	JFrame frame;
 	JButton DepositBtn, WithdrawBtn, DetailsBtn, TransactionsBtn;
@@ -37,6 +39,7 @@ public class HomePage {
 		DepositBtn.setFont(font);
 		DepositBtn.setBackground(Color.BLUE);
 		DepositBtn.setForeground(Color.white);
+		DepositBtn.addActionListener(this);
 		
 		WithdrawBtn = new JButton("Withdraw");
 		WithdrawBtn.setBounds(325,55,225,225);
@@ -89,6 +92,17 @@ public class HomePage {
 		frame.setVisible(true);
 		
 		
+		
+	}
+
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==DepositBtn) {
+			DepositPage depositpage = new DepositPage();
+			frame.dispose();
+		}
 		
 	}
 
